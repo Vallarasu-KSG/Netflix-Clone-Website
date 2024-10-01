@@ -119,13 +119,17 @@ function signinbtn()
             alert("Password Required.");
             return;
         }
+        if (password.length < 8) {
+            alert("Password should be at least 8 characters");
+            return;
+        }
         alert("Password does not match.");
         return;
     }
     else
     {
         
-        alert(email + "Login Successful Welcome");
+        alert(email + " Login Successful Welcome");
         window.open('index.html','_self');
         document.getElementById('se').value=" ";
         document.getElementById('sp').value=" ";
@@ -151,6 +155,10 @@ function signupbtn()
         alert("Password required.");
         return;
     }
+    else if (password.length < 8) {
+        alert("Password should be at least 8 characters");
+        return;
+    }
     else if (passwordRetype < 1)
     {
         alert("passwordRetype required.");
@@ -165,7 +173,7 @@ function signupbtn()
     {
         emailarray.push(email);
         passwordarray.push(password);
-        alert(email + "Thank for registration.");
+        alert(email + " Thank for registration.");
 
         // clear-value
         document.getElementById("re").value =" ";
@@ -173,7 +181,23 @@ function signupbtn()
         document.getElementById("rrp").value =" ";
     }
 }
-// function forgetbtn()
-// {
 
-// }
+function ForgotPassword()
+{
+    const a=prompt("Please enter the email")
+    if(a || null)
+    {
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  
+        if (!emailRegex.test(a)) 
+        {
+            alert("Invalid email format");
+            return;
+        }
+        alert(a + " Verification request sent to your email Check it in 24hr");
+    }
+    else
+    {
+        alert("You not enter the email");
+    }
+}

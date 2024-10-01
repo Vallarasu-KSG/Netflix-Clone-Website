@@ -72,7 +72,7 @@ function GetStarted() {
   }
   else 
   {
-    alert("Verify your email address. Go to your email address");
+    alert(emailValue + " Verify your email address. request send your email Check it in 24hr ");
     emailInput.value = "";
   }
 }

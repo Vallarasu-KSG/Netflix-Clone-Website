@@ -57,22 +57,21 @@ for (let i = 0; i < accordian.length; i++)
 function GetStarted() {
   const emailInput = document.querySelector('.form-email-input');
 
-  const emailValue = emailInput.value.trim();
-
-  if (!emailValue) {
-    alert("Enter email address");
-  } 
-  
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   
-  if (!emailRegex.test(emailValue)) 
-  {
-    alert("Invalid email format");
-    return;
-  }
-  else 
-  {
+  const emailValue = emailInput.value.trim();
+  if (!emailValue) 
+    {
+      alert("Enter email address");
+    }
+  else if (!emailRegex.test(emailValue)) 
+    {
+      alert("Invalid email format");
+      return;
+    }
+  else
+    { 
     alert(emailValue + " Verify your email address. request send your email Check it in 24hr ");
     emailInput.value = "";
-  }
+    }
 }

@@ -150,6 +150,13 @@ function signupbtn()
         alert("Email required.");
         return;
     }
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  
+        if (!emailRegex.test(email)) 
+        {
+            alert("Invalid email format");
+            return;
+        }
     else if (password < 1)
     {
         alert("Password required.");

@@ -109,7 +109,7 @@ function signinbtn()
             alert("Email Required.");
             return;
         }
-        alert(" Emial does not match.");
+        alert(" Emial does not match. \n Please register your details go to sign-up-now");
         return;
     }
     else if (passwordarray[i] != password)
